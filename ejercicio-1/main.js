@@ -2,10 +2,7 @@ function sendForm(event) {
   event.preventDefault();
 
   const name = event.target.name.value;
-  const lastName = event.target.lastName.value;
-  const email = event.target.email.value;
-  const password = event.target.password.value;
-  const password2 = event.target.password2.value;
+  // recupere los datos faltantes
 
   const app = document.getElementById("app");
   if (password !== password2) {
@@ -20,33 +17,18 @@ function sendForm(event) {
       label: "Nombre",
       value: name,
     },
-    {
-      label: "Apellido",
-      value: lastName,
-    },
-    {
-      label: "Email",
-      value: email,
-    },
-    {
-      label: "Contraseña",
-      value: password,
-    },
-    {
-      label: "Repetir contraseña",
-      value: password2,
-    },
+    // complete el objeto
   ];
 
   const title = document.createElement("h1");
   title.innerHTML = `<h1 class="text-2xl title">
     Datos del usuario
-</h1>`;
+  </h1>`;
   app.appendChild(title);
   app.style.height = "auto";
 
   user.forEach((item) => {
-    const container = document.createElement("div");
+    const container = document.createElement(""); // dentro de las comillas complete la etiqueta a crear
     container.innerHTML = `
             <div
                 class="container__item"  

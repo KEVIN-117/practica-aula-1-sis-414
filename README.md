@@ -16,10 +16,7 @@ El objetivo de esta práctica es que el alumno se familiarice con el uso de HTML
 ---
 
 ## Primera Parte
-[Primera Parte](https://polar-dichondra-742.notion.site/PRACTICA-EN-AULA-1-HTML-CSS-y-JS-1f88e53fe2564ec584ba586601bf18a1)
+![img.png](img.png)
+[click para ver](https://polar-dichondra-742.notion.site/PRACTICA-EN-AULA-1-HTML-CSS-y-JS-1f88e53fe2564ec584ba586601bf18a1)
 
 ---
-
-
-
-

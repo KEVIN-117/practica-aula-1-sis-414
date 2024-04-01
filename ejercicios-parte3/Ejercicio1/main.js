@@ -1,5 +1,7 @@
+
 function solution(number){
     // Completar la función
+
 
 }
 
@@ -8,3 +10,5 @@ function eventHandler(event){
     let number = document.getElementById("number").value;
     solution(number);
 }
+
+// tests

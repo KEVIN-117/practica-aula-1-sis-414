@@ -1,6 +1,6 @@
 function sendForm(event) {
   event.preventDefault();
-
+  console.log(event);
   const name = event.target.name.value;
   // recupere los datos faltantes
 

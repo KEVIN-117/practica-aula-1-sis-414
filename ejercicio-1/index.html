@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="relative">
+<body class="relative py-10">
     <div class="grid grid-cols-1 gap-5">
         <h1 class="text-2xl title">
             Formulario de registro de usuario
@@ -17,24 +18,35 @@
             <label for="name">Nombre:</label>
             <input type="text" name="name" id="name" required>
             <br>
-
-						<!--complete los campos faltantes -->
-						
-						
-            <button type="submit" 
-                style="
+            <label for="lastName">Apellido:</label>
+            <input type="text" name="lastName" id="lastName" required>
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" required>
+            <br>
+            <label for="password">Contraseña:</label>
+            <input type="password" name="password" id="password" required>
+            <br>
+            <label for="password2">Repetir Contraseña:</label>
+            <input type="password" name="password2" id="password2" required>
+            <br>
+            <button type="submit" style="
                     background-color: var(--primary-color);
                     color: white;
                     border: none;
                     padding: 10px;
                     border-radius: 5px;
                     cursor: pointer;
-                "
-            >
+                ">
                 Enviar
             </button>
         </form>
-        <div class="border-t-8 border-[#007bff] p-4 rounded-xl h-[30vh] w-[90%] mx-auto" id="app"></div>
+        <div class="border-t-8 border-[#007bff] border p-4 rounded-xl h-[30vh] w-[90%] mx-auto" id="app"></div>
+        <h1 class="text-2xl title">
+            Lista de usuarios
+        </h1>
+        <div class="border-t-8 border-[#007bff] border p-4 rounded-xl h-[30vh] w-[90%] mx-auto grid grid-cols-4 gap-5"
+            id="lista"></div>
     </div>
     <div class="absolute inset-x-0 top-0 -z-10 transform-gpu overflow-hidden blur-3xl" aria-hidden="true">
         <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-pink-500 to-violet-500

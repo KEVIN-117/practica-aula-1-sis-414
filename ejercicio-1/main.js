@@ -1,10 +1,38 @@
+const users = [
+  [
+    {
+      label: "Nombre",
+      value: "Juan",
+    },
+    {
+      label: "Apellido",
+      value: "Perez",
+    },
+    {
+      label: "Email",
+      value: "alguien@gmail.com",
+    },
+    {
+      label: "Contraseña",
+      value: "123456",
+    },
+    {
+      label: "Repetir contraseña",
+      value: "123456",
+    }
+  ]
+]
 function sendForm(event) {
   event.preventDefault();
-  console.log(event);
   const name = event.target.name.value;
+  const lastname = event.target.lastName.value;
+  const email = event.target.email.value;
+  const password = event.target.password.value;
+  const password2 = event.target.password2.value;
   // recupere los datos faltantes
 
   const app = document.getElementById("app");
+  app.innerHTML = "";
   if (password !== password2) {
     const error = document.createElement("p");
     error.textContent = "Las contraseñas no coinciden";
@@ -17,8 +45,25 @@ function sendForm(event) {
       label: "Nombre",
       value: name,
     },
-    // complete el objeto
+    {
+      label: "Apellido",
+      value: lastname,
+    },
+    {
+      label: "Email",
+      value: email,
+    },
+    {
+      label: "Contraseña",
+      value: password,
+    },
+    {
+      label: "Repetir contraseña",
+      value: password2,
+    }
   ];
+
+  users.push(user);
 
   const title = document.createElement("h1");
   title.innerHTML = `<h1 class="text-2xl title">
@@ -28,7 +73,7 @@ function sendForm(event) {
   app.style.height = "auto";
 
   user.forEach((item) => {
-    const container = document.createElement(""); // dentro de las comillas complete la etiqueta a crear
+    const container = document.createElement("div"); // dentro de las comillas complete la etiqueta a crear
     container.innerHTML = `
             <div
                 class="container__item"  
@@ -41,5 +86,35 @@ function sendForm(event) {
                 >${item.value}</span>
             </div>`;
     app.appendChild(container);
+  });
+  loadData()
+  event.target.reset();
+}
+
+// load data
+function loadData() {
+  const app = document.getElementById("lista");
+  app.innerHTML = "";
+  
+  app.style.height = "auto";
+
+  users.forEach((user) => {
+    const row = document.createElement("div");
+    user.forEach((item) => {
+      const container = document.createElement("div"); // dentro de las comillas complete la etiqueta a crear
+      container.innerHTML = `
+            <div
+                class="container__item"  
+            > 
+                <span
+                    class="item__label"
+                >${item.label}</span>
+                <span
+                    class="item__value"
+                >${item.value}</span>
+            </div>`;
+      row.appendChild(container);
+    });
+    app.appendChild(row);
   });
 }
